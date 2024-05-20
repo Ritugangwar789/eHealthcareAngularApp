@@ -1,0 +1,63 @@
+<div><app-header></app-header></div>
+
+<div>
+  <button  type="button" class="btn btn-primary return">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"></path>
+</svg>
+</button>
+</div>
+
+<div class="container-fluid" id="rooms-container">
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Rooms Details</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <button class="btn" style="background-color: #3e92e6" data-bs-toggle="modal" data-bs-target="#addRoom" type="submit">Add Rooms</button>
+          </div>
+        </div>
+    </nav>
+
+  <!--Add Room Modal -->
+  <div class="modal fade" id="addRoom" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Rooms</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="roomDetails">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Room Id</label>
+                <input type="text" formControlName="roomId" class="form-control" id="roomId">
+            </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Status</label>
+                    <input type="text" formControlName="room" class="form-control" id="status">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Rent</label>
+                    <input type="text" formControlName="rent" class="form-control" id="rent">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Floor</label>
+                    <input type="text" formControlName="floor" class="form-control" id="floor">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn" style="background-color: #3e92e6" (click)="addRoom()">Add Room</button>
+                  </div>
+              </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,113 @@
+<!-- <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success :)</strong>
+  <div>User Details Updated Successfully.</div>
+</div> -->
+
+
+<div>
+  <app-header></app-header>
+</div>
+
+<div>
+  <button  type="button" class="btn btn-primary return"(click)="returndash()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"></path>
+</svg>
+</button>
+</div>
+
+<div class="container-fluid mt-2">
+  <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid ">
+        <h1 class="fw-bold text-primary text-center fs-8 mb-4 cent">User Details</h1>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarSupportedContent">
+          <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addUser" type="submit">Edit Details</button>
+        </div>
+      </div>
+    </nav>
+    
+
+    <div class="details-card container card border p-4 shadow bg-light" style="width: 40rem;">
+      <div class="">
+        <div id="user-name" class="mt-2 mb-2 p-lg-1 text-justify" >
+         <label><strong>Name</strong> : Ritu Gangwar {{pd1.name}} </label>
+        </div>
+        <div id="email" class="mt-1 mb-3 p-lg-1 text-justify">
+          <strong>Email</strong> : 0201cse197@niet.co.in{{pd1.email}}
+        </div>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item text-justify mb-lg-1 bg-light">
+          <label><strong>Date of Birth</strong> : 16-05-2001 {{pd1.dob}} </label> <span></span>
+        </li>
+        <li class="list-group-item text-justify mb-lg-1 bg-light">
+          <label><strong>Gender</strong> : Female {{pd1.gender}} </label> <span></span>
+        </li>
+        <li class="list-group-item text-justify mb-lg-1 bg-light">
+          <label><strong>Address</strong> : 166 sec-5 Awas Vikas Colony, Agra {{pd1.address}} </label> <span></span>
+        </li>
+        <li class="list-group-item text-justify mb-lg-1 bg-light">
+          <label><strong>Father's name</strong> : Er. R.K Gangwar  {{pd1.fathername}}</label> <span></span>
+        </li>
+        <li class="list-group-item text-justify mb-lg-1 bg-light">
+          <label><strong>Mother's name</strong> : Adv. Geeta Gangwar{{pd1.mothername}} </label> <span></span>
+        </li>
+      </ul>
+    </div>
+
+
+<!-- Add User Modal -->
+<div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" [(ngModel)]="pd1.username" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" [(ngModel)]="pd1.email" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="mb-3">
+            <label for="dob" class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" id="dob" [(ngModel)]="pd1.dob" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="mb-3">
+            <label for="gender" class="form-label">Gender</label>
+            <select id="gender" class="form-select" [(ngModel)]="pd1.gender" [ngModelOptions]="{standalone: true}">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" class="form-control" id="address" [(ngModel)]="pd1.address" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="mb-3">
+            <label for="fathername" class="form-label">Father's Name</label>
+            <input type="text" class="form-control" id="fathername" [(ngModel)]="pd1.fathername" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="mb-3">
+            <label for="mothername" class="form-label">Mother's Name</label>
+            <input type="text" class="form-control" id="mothername" [(ngModel)]="pd1.mothername" [ngModelOptions]="{standalone: true}">
+          </div>
+         
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="updateUser()">Update Details</button>
+      </div>
+    </div>
+  </div>
+</div>

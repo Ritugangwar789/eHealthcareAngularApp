@@ -1,0 +1,163 @@
+<div>
+  <app-header></app-header>
+</div>
+
+<div>
+  <button type="button" class="btn btn-primary return" (click)="returndash()">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      class="bi bi-arrow-return-left"
+      viewBox="0 0 16 16"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"
+      ></path>
+    </svg>
+  </button>
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
+      <div class="col-12">
+        <h3 class="fw-bold text-primary text-center fs-8 mb-4">
+          Outpatient Form
+        </h3>
+      </div>
+      <form [formGroup]="outpatientForm" (ngSubmit)="submitOutpatientForm()">
+        <div class="row g-3 mt-3">
+          <div class="col-md-6">
+            <h6>Patient Name:</h6>
+            <input
+              type="text"
+              class="form-control"
+              id="inputPatientName"
+              formControlName="inputPatientName"
+              placeholder="Patient Name"
+              value={{this.pd1.name}}
+            />
+          </div>
+          <div class="col-md-6">
+            <h6>Phone Number:</h6>
+            <input
+              type="text"
+              class="form-control"
+              id="inputPhoneNumber"
+              formControlName="inputPhoneNumber"
+              placeholder="Phone Number"
+              required
+            />
+          </div>
+          <div class="col-md-6">
+            <h6>Email:</h6>
+            <input
+              type="email"
+              class="form-control"
+              id="inputEmail"
+              formControlName="inputEmail"
+              readonly
+              value={{this.pd1.email}}
+            />
+          </div>
+
+          <div class="col-md-6">
+            <h6>Date of Birth:</h6>
+            <input
+              type="date"
+              id="inputDateOfBirth"
+              formControlName="inputDateOfBirth"
+              class="form-control"
+              placeholder="Enter Date"
+              required
+            />
+          </div>
+
+          <div class="col-md-6">
+            <h6>Date of Appointment:</h6>
+            <input
+              type="date"
+              id="inputDateOfAppointment"
+              formControlName="inputDateOfAppointment"
+              class="form-control"
+              placeholder="Enter Date"
+              required
+              (change)="onDataChange($event)"
+              />
+          </div>
+          <div class="col-6">
+            <h6>Doctor Name:</h6>
+            <select
+              id="inputDoctorName"
+              formControlName="inputDoctorName"
+              class="form-select"
+              required
+              (change)="onDoctorChange($event)"
+            >
+              <option *ngFor="let doctor of doctors" [value]="doctor.id">
+                  {{ doctor.docname }}
+              </option>
+            </select>
+          </div>
+
+          <div class="col-6">
+            <h6>Choose Time Slot:</h6>
+            <select
+              id="inputTimeSlot"
+              formControlName="inputTimeSlot"
+              class="form-select"
+              required
+            >
+             <option *ngFor="let slot of timeSlots" [value]="slot.slotTime">
+               {{slot.slotTime}}
+             </option>
+            </select>
+          </div>
+
+          <div class="col-6">
+            <h6>Choose Disease:</h6>
+            <select
+              class="form-select"
+              id="inputDisease"
+              formControlName="inputDisease"
+            >
+              <option
+              *ngFor="let disease of diseases"
+              [value]="disease.ipdisease"
+              >
+              {{ disease.ipdisease }}
+              
+              </option>
+            </select>
+          </div>
+
+          <div class="col-12">
+            <label>
+              <input type="checkbox" formControlName="agreeToTerms" required />
+              I agree to terms and conditions.
+            </label>
+          </div>
+
+          <div class="col-12 mt-5">
+            <button
+              type="submit"
+              class="btn btn-primary float-end"
+              [disabled]="!outpatientForm.valid"
+            >
+              Book Appointment
+            </button>
+            <button
+              type="reset"
+              class="btn btn-outline-secondary float-end me-2"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

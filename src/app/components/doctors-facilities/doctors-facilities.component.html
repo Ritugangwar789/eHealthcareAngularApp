@@ -1,0 +1,48 @@
+<app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
+<div>
+    <app-header></app-header>
+</div>
+
+<div>
+    <button type="button" class="btn btn-primary return" (click)="returndash()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"></path>
+    </svg>
+
+      </button>
+</div>
+
+<section class="section-doctors-facilities">
+    <div class="headingDoctor">
+        <h1 class="fw-bold text-primary text-center fs-8 mb-4">Consult Our Doctors</h1>
+    </div>
+    <div class="container-fluid mt-5">
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col" class="fw-bold text-primary">Doctor Name</th>
+                    <th scope="col" class="fw-bold text-primary">Speciality</th>
+                    <th scope="col" class="fw-bold text-primary">Experience</th>
+                    <!-- <th scope="col" class="fw-bold text-primary">Contact</th> -->
+                    <th scope="col" class="fw-bold text-primary">Availability</th>
+                    <th scope="col" class="fw-bold text-primary">Cancel Slot</th>
+
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr *ngFor="let doctor of doctors">
+                    <td>{{doctor.docname }}</td>
+                    <td>{{ doctor.docdep }}</td>
+                    <td>{{ doctor.docexp }}</td>
+                    <!-- <td>{{doctor.contact}}</td> -->
+                    <td>{{ doctor.availfrom}} {{(doctor.availfrom||doctor.availto)&& ('to')}} {{ doctor.availto }}</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-danger" (click)="deleteDoc(doctor.id)">
+                              Delete
+                            </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

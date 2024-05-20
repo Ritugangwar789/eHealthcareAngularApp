@@ -1,0 +1,41 @@
+<app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
+<div class="cont">
+  <div class="toolbar" role="banner">
+    <img width="40" alt="healthcare Logo"
+      src="https://th.bing.com/th/id/OIP.hbXAaGtQWusmlW2_pbxKOAHaHa?w=172&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" />
+
+    <span>MediConnect360</span>
+  </div>
+
+  <div class="center">
+    <h1>Sign In</h1>
+
+    <form [formGroup]="loginForm" (ngSubmit)="Login()">
+      <div class="txt_field form-group">
+        <input placeholder="username" class="form-control" type="email" [(ngModel)]="email" formControlName="email" />
+
+        <span></span>
+
+        <!-- <label>Username</label> -->
+      </div>
+
+      <div class="txt_field">
+        <input placeholder="password" class="form-control inp" type="password" [(ngModel)]="password"
+          formControlName="password" />
+
+        <span></span>
+        <!-- <label>Password</label> -->
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary float-center" [disabled]="!loginForm.valid">
+          Sign In
+        </button>
+      </div>
+
+      <div class="signup_link">
+        New User?
+        <a routerLink="/registration"> Signup Now</a>
+      </div>
+    </form>
+  </div>
+</div>

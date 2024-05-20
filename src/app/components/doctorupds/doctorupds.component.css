@@ -1,0 +1,15 @@
+.grid-container {
+    grid-column-gap: 1px;
+    grid-row-gap: 10px;
+    align-items: center;
+}
+
+.return {
+    position: absolute;
+    top: 80px;
+    width: 50px;
+    background-color: #3e92e6;
+    border-radius: 100%;
+    height: 50px;
+    left: 10px;
+}

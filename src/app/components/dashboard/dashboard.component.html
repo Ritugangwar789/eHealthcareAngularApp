@@ -1,0 +1,183 @@
+<div>
+  <app-header></app-header>
+</div>
+<section class="section-dashboard" id="card">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="text-center">Dashboard</h1>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="colm col-md-3 col-lg-3 offset-lg-0">
+        <div class="cards">
+          <img class="img-cards" src="../../../assets/Images/Profile_page.jpeg" class="card-img-top w-100 d-block" />
+          <div class="card-body">
+            <h4 class="card-title">Personal Profile</h4>
+
+            <button type="button" class="btn btn-outline-primary btn-1" routerLink="/personal-details">
+              Visit
+            </button>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="colm col-md-3 col-lg-3 offset-lg-0">
+        <div class="cards">
+          <img class="img-cards" src="../../../assets/Images/Appointment-Details.jpg"
+            class="card-img-top w-100 d-block" />
+          <div class="card-body">
+            <h4 class="card-title">Appointment Details</h4>
+
+            <button type="button" class="btn btn-outline-primary btn1" routerLink="/appointment-details">
+              Visit
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="colm col-md-3 col-lg-3 offset-lg-0">
+        <div class="cards">
+          <img class="img-cards" src="../../../assets/Images/Available_Facilities.jpeg"
+            class="card-img-top w-100 d-block" />
+          <div class="card-body">
+            <h4 class="card-title">Available Facilities</h4>
+
+            <button type="button" class="btn btn-outline-primary btn1" routerLink="/doctor-facilities">
+              Doctors
+            </button>
+            <button type="button" class="btn btn-outline-primary btn1" routerLink="/test-facilities">
+              Tests
+            </button>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="colm col-md-3 col-lg-3 offset-lg-0">
+        <div class="cards">
+          <img class="img-cards" src="../../../assets/Images/Book_appointment.jpeg"
+            class="card-img-top w-100 d-block" />
+          <div class="card-body">
+            <h4 class="card-title">Book Appointment</h4>
+
+            <button type="button" class="btn btn-outline-primary btn1" routerLink="/inpatient-form">
+              In-Patient
+            </button>
+
+            <button type="button" class="btn btn-outline-primary btn1" routerLink="/outpatient-form">
+              Out-Patient
+            </button>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="colm col-md-3 col-lg-3 offset-lg-0">
+        <div class="cards">
+          <img class="img-cards" src="../../../assets/Images/Add-ins.jpeg" class="card-img-top w-100 d-block" />
+          <div class="card-body">
+            <h4 class="card-title">Add Records</h4>
+
+            <button type="button" class="btn btn-outline-primary btn1" routerLink="/doctorsupdate">
+              Doctors
+            </button>
+
+
+            <button type="button" class="btn btn-outline-primary btn1" routerLink="/roomsupdate">
+              Rooms
+            </button>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="colm col-md-3 col-lg-3 offset-lg-0">
+        <div class="cards">
+          <img class="img-cards" src="../../../assets/Images/transaction.jpeg" class="card-img-top w-100 d-block" />
+          <div class="card-body">
+            <h4 class="card-title">Transaction Records</h4>
+            <button type="button" class="btn btn-outline-primary" routerLink="/transaction-records">Visit</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="colm col-md-3 col-lg-3 offset-lg-0">
+        <div class="cards">
+          <img class="img-cards" src="../../../assets/Images/Report_Generation.jpeg"
+            class="card-img-top w-100 d-block" />
+          <div class="card-body">
+            <h4 class="card-title">Test Report</h4>
+            <button type="button" class="btn btn-outline-primary" routerLink="/test-records">Visit</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="colm col-md-3 col-lg-3 offset-lg-0">
+        <div class="cards">
+          <img class="img-cards" src="../../../assets/Images/Feedback.jpg" class="card-img-top w-100 d-block" />
+          <div class="card-body">
+            <h4 class="card-title">Feedback FAQs</h4>
+
+            <button type="button" class="btn btn-outline-primary btn1" routerLink="/feedback">
+              Visit
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chat-button-container">
+    <button *ngIf="!showChatForm" class="chat-button" (click)="toggleChatForm()">
+      <!-- <i class='fas fa-robot' style='font-size:30px'></i> -->
+      <img src="../../../assets/Images/chat_bot.gif" alt="Chat Bot" style="width: 60px; border-radius: 50%;">
+      <!-- <i class="fa-solid fa-robot"></i> -->
+    </button>
+  </div>
+
+  <div class="chat-form-container" [ngClass]="{'show': showChatForm}">
+    <div class="chat-form" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+      <!-- Chat form content goes here -->
+      <!-- For example, you can add an input field for typing messages -->
+      <div *ngFor="let message of chatHistory" ></div>
+      <div class="chat-container">
+        <div *ngFor="let message of chatHistory">
+          <div *ngIf="message.isUser" class="user-message right">
+            <div class="message">{{ message.text }}</div>
+          </div>
+          <div *ngIf="!message.isUser" class="bot-message left">
+            <div class="message">{{ message.text }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="input-container">
+        <input type="text" [(ngModel)]="userInput" (keyup.enter)="submitInput()" placeholder="Type your message...">
+      </div>
+
+      <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-around; width: 100%;">
+        <button (click)="submitInput()">
+          <div class="svg-wrapper-1">
+            <div class="svg-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path fill="currentColor"
+                  d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                </path>
+              </svg>
+            </div>
+          </div>
+          <span>Send</span>
+        </button>
+        <!-- <input type="text" [(ngModel)]="userInput" placeholder="Type your message..." (keyup.enter)="sendMessage()"> -->
+        <!-- Add a close button for closing the chat form -->
+        <button (click)="toggleChatForm()" style="width: 5.6rem; height: 2.7rem; text-align: center;">Close</button>
+      </div>
+    </div>
+  </div>
+
+
+</section>

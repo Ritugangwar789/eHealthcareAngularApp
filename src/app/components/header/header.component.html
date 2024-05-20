@@ -1,0 +1,10 @@
+<div class="toolbar" role="banner">
+
+    <img class="logoimg" width="40" alt="healthcare Logo" routerLink="/" src="https://th.bing.com/th/id/OIP.hbXAaGtQWusmlW2_pbxKOAHaHa?w=172&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" />
+    <span class="logoTitle" routerLink="/dashboard">MediConnect360</span>
+
+    <a class="logoutImage"><i class="material-icons" routerLink="/">logout</i></a>
+    <span class="userName" *ngIf="!username">Hi Ritu!</span>
+    <span class="userName" *ngIf="username">Hi {{username}}!</span>
+
+</div>

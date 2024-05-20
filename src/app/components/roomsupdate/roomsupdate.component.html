@@ -1,0 +1,59 @@
+<!-- <div>
+    <app-header></app-header>
+</div> -->
+
+<div>
+    <button type="button" class="btn btn-primary return" (click)="returndash()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"></path>
+</svg>
+</button>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
+            <div class="col-12">
+                <h3 class="fw-bold text-primary text-center fs-8 mb-4">
+                    Room
+                </h3>
+            </div>
+            <form>
+                <div class="row g-3 mt-3">
+                    <div class="col-6">
+                        <h6>Choose floor</h6>
+                        <select id="dept" class="form-select" required [(ngModel)]="roomsupd.floor" name="floorno">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    </select>
+                    </div>
+                    <div class="col-6">
+                        <h6>Choose Room</h6>
+                        <input type="text" class="form-control" name="Room no" id="rooms" required [(ngModel)]="roomsupd.rid">
+                        <!-- <select id="dept" class="form-select" required [(ngModel)]="roomno" name="roomno">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option> -->
+                        <!-- </select> -->
+                    </div>
+                    <div class="col-6">
+                        <h6>Availability</h6>
+                        <select id="dept" class="form-select" required [(ngModel)]="roomsupd.status" name="avail">
+    <option value="Available">Available</option>
+    <option value="Unavailable">Unavailable</option>
+    </select>
+                    </div>
+                    <div class="col-12 mt-5">
+                        <button type="button" class="btn btn-primary float-end" (click)="updRoom()">
+    Update Room
+    </button>
+                        <button class="btn btn-outline-secondary float-end me-2" (click)="resetValues()">
+    Reset
+    </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

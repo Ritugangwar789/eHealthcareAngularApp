@@ -1,0 +1,47 @@
+.toolbar {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  background-color: #3e92e6;
+  color: white;
+  font-weight: 600;
+}
+
+.logoimg {
+  margin: 20px;
+  margin-top: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.logoTitle {
+  margin-top: 6px;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+
+}
+
+.logoutImage {
+  width: 32px;
+  margin-top: 10px;
+  align-items: flex-end;
+  color: white;
+  cursor: pointer;
+  float: right;
+  position: relative;
+  left: 80%;
+}
+
+.userName {
+  margin-top: 6px;
+  font-weight: bold;
+  font-size: 20px;
+  float: right;
+  position: relative;
+  left: 67%;
+}

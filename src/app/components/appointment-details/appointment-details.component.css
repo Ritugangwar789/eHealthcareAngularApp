@@ -1,0 +1,211 @@
+.return {
+  position: absolute;
+  top: 80px;
+  width: 50px;
+  background-color: #3e92e6;
+  border-radius: 100%;
+  height: 50px;
+  left: 10px;
+}
+
+.form-container {
+  border: 1px solid #ccc;
+  padding: 10px; /* Reduced padding */
+  margin-bottom: 20px;
+  width: 300px; /* Adjust width as needed */
+}
+
+/* Adjust styles for form elements */
+label {
+  font-size: 14px; /* Reduced font size for labels */
+}
+
+input[type="text"],
+input[type="email"],
+button {
+  width: calc(100% - 20px); /* Adjust width of input fields and button */
+  padding: 8px; /* Reduced padding for inputs and button */
+  margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+button {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px; /* Adjust font size */
+  padding: 8px 12px; /* Adjust padding */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.button-container {
+  position: relative; /* Required for positioning children */
+  width: 100%; /* Adjust as needed */
+  top: 10px; /* Adjust top position */
+  right: 10px;
+}
+
+.open-form-button {
+  top: 10px; /* Adjust top position */
+  right: 100px;
+  width: 100%;
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Cursor on hover */
+  font-size: 14px; /* Font size */
+  padding: 8px 10px; /* Padding */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.open-form-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.open-form-button:focus {
+  outline: none; /* Remove focus outline */
+}
+
+.open-form-button:disabled {
+  background-color: #cccccc; /* Light gray when disabled */
+  cursor: not-allowed; /* Disable cursor */
+}
+
+
+.success-message {
+  background-color: #dff0d8;
+  border: 1px solid #d6e9c6;
+  color: #3c763d;
+  padding: 8px; /* Reduced padding */
+  margin-top: 10px;
+  width: 300px; /* Adjust width as needed */
+}
+
+
+.table-head {
+
+  height: 2.5rem;
+
+  justify-content: center;
+
+  background-color: #3e92e6;
+
+}
+
+
+
+#appointment-card {
+
+  margin-top: 2.5em;
+
+  text-align: center;
+
+  box-shadow: 2px 2px 2px 2px #afd0f0;
+
+  ;
+
+}
+
+
+
+#appointment-detail-row:hover {
+
+  background-color: #8dd1f85b;
+
+}
+
+.btn {
+
+  position: relative;
+
+  left:900px;
+
+
+
+}
+
+.btn1{
+
+position: relative;
+
+right: 10px;
+
+background-color: white;
+
+border-style: none;
+
+padding:4px 10px;
+
+}
+
+.ff{
+  border: none;
+}
+
+
+
+.btn1:hover{
+
+position: relative;
+
+right: 10px;
+
+background-color: #dc3546d2;
+
+color: white;
+
+border-style: none;
+
+padding:4px 10px;
+
+}
+
+
+
+th,td{
+
+padding: 10px;
+
+border-bottom: 1px solid black;
+
+
+}
+
+th,td input{
+  text-align: center;
+}
+
+
+.return {
+  position: relative;
+  top: 10px;
+  width: 50px;
+  background-color: #3e92e6;
+  border-radius: 100%;
+  height: 50px;
+  left: 10px;
+}
+
+.container-fluid .headingP {
+  color: #3e92e6;
+  margin-left: 620px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.cent {
+  position: relative;
+  text-align: center;
+  left: 550px;
+}
+
+

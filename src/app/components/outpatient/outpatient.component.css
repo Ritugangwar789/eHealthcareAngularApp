@@ -1,0 +1,35 @@
+/* .outpatient{
+    padding: 30px;
+    max-width: 400px;
+    margin:auto;
+}
+
+.outpatient h2{
+    color: #1976d2;
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.outpatient form{
+    display: grid;
+    gap:10px;
+}
+
+.outpatient label{
+    font-weight: bold;
+}
+
+.outpatient button{
+    width: 100px;
+} */
+
+.return {
+    position: absolute;
+    top: 80px;
+    width: 50px;
+    background-color: #3e92e6;
+    border-radius: 100%;
+    height: 50px;
+    left: 10px;
+}

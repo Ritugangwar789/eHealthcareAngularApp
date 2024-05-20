@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  box-shadow: rgb(12, 1, 1);
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+.inline1 {
+  display: inline-block;
+}
+
+.cont {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #2980b9, #8e44ad);
+  height: 100vh;
+  width: 100%;
+  background-image: url("src\assets\Images\physician-finder-banner-photo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.center {
+  position: absolute;
+  padding-bottom: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background: rgb(252, 250, 250);
+  border-radius: 30px;
+  box-shadow: 1000px 1000px 1000px rgba(0, 0, 0, 0.938);
+}
+
+.center h1 {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(73, 70, 70, 0.938);
+  color: rgba(58, 57, 57, 0.938);
+}
+
+.center form {
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+form .txt_field {
+  position: relative;
+  border-bottom: 2px solid #5e5b5b;
+  margin: 30px 0;
+}
+
+.st {
+  color: rgb(52, 53, 53);
+}
+
+/* .button1 {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle", -apple-system, system-ui, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+} */
+
+/* @media (min-width: 768px) {
+  .button1 {
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+  }
+} */
+
+.txt_field input {
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+  padding-top: 25px;
+  padding-left: 5px;
+}
+
+.txt_field label {
+  position: absolute;
+  top: 30%;
+  left: 5px;
+  color: #3d3b3b;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.btn {
+  height: 40px;
+  width: 100px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10px;
+  background-color: #3e92e6;
+}
+
+.pass {
+  margin: -5px 0 20px 5px;
+  color: #050000fb;
+  cursor: pointer;
+}
+
+.pass:hover {
+  text-decoration: underline;
+}
+
+input[type="submit"]:hover {
+  border-color: #850a01;
+  transition: 0.5s;
+}
+
+.signup_link {
+  margin: 30px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #615c5c;
+}
+
+.signup_link a {
+  color: #017185;
+  text-decoration: none;
+}
+
+.signup_link a:hover {
+  text-decoration: underline;
+}
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  background-color: #3e92e600;
+  color: white;
+  font-weight: 600;
+  padding-top: 1em;
+  padding-left: 0.5em;
+}
+
+.toolbar img {
+  margin: 0 16px;
+  border-radius: 50%;
+}
+
+#NEED_HELP {
+  text-align: top;
+  color: rgb(90, 85, 85);
+  text-size-adjust: 20px;
+  background-color: black;
+  width: 200px;
+}

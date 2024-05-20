@@ -1,0 +1,63 @@
+<app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
+<div class="mb-4">
+    <app-header></app-header>
+</div>
+
+<div style="display: flex; flex-direction: row; width: 98%; justify-content: space-between;">
+    <div>
+        <button type="button" class="btn btn-primary return" (click)="returndash()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z">
+                </path>
+            </svg>
+        </button>
+    </div>
+
+    <div *ngIf="!messageSent">
+        <button (click)="openForm()" *ngIf="!showForm" class="open-form-button">Open Form</button>
+    </div>
+
+</div>
+
+<div *ngIf="showForm && !messageSent" class="form-container">
+    <form (ngSubmit)="sendEmail()">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" [(ngModel)]="name"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" [(ngModel)]="email"><br><br>
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+<div *ngIf="messageSent" class="success-message">Email sent successfully. Your report has been submitted.</div>
+
+
+<h1 class="headingP text-center fs-8 mb-4 text-primary">Appointment Details</h1>
+
+<table class="container-fluid" id="appointment-card" style="max-width: 70vw;">
+
+    <thead id="appointment-table-head">
+
+        <tr class="table-head">
+            <th scope="col">Patient Name</th>
+            <th scope="col">Date</th>
+            <th scope="col">Doctor Name</th>
+            <th scope="col">Patient Type</th>
+            <th scope="col"> Cancel Appointment </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let patient of aptdt">
+
+            <td><input type="button" class="ff form-control" required [(ngModel)]="patient.pname"></td>
+            <td><input type="text" class="ff form-control" required [(ngModel)]="patient.date"></td>
+            <td><input input type="text" class="ff form-control" required [(ngModel)]="patient.docname"></td>
+            <td><input input type="text" class="ff form-control" required [(ngModel)]="patient.ptype"> </td>
+            <td><button type="reset" class="btn1 btn-danger" (click)="deletep(patient.aid)">Cancel</button></td>
+        </tr>
+
+    </tbody>
+
+</table>
